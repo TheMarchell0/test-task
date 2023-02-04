@@ -1,0 +1,19 @@
+//Normalize styles
+@import 'vendor';
+
+//Fonts
+@import 'fonts';
+
+//CSS variables
+@import 'vars';
+
+
+//Main styles
+* {
+  font-family: 'Inter';
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+//Blocks
