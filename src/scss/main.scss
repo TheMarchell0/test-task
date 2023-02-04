@@ -14,6 +14,23 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  color: var(--main-black);
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
 }
 
 //Blocks
+
+@import './blocks/core';
+@import './blocks/header';
+@import './blocks/main-slider';
+@import './blocks/categories';
+@import './blocks/sale';
+@import './blocks/product';
+@import './blocks/articles';

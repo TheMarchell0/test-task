@@ -1,0 +1,118 @@
+.visually-hidden {
+  position: absolute!important;
+  margin: 0!important;
+  padding: 0!important;
+  width: 1px!important;
+  height: 1px!important;
+  white-space: nowrap!important;
+  -webkit-clip-path: inset(100%)!important;
+  clip-path: inset(100%)!important;
+  clip: rect(0 0 0 0)!important;
+  overflow: hidden!important;
+}
+.container {
+  max-width: 1300px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 85px;
+}
+
+h2 {
+  font-family: 'Prata';
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 1;
+  color: #303030;
+}
+
+.timer__items {
+  display: flex;
+  font-size: 48px;
+}
+.timer__item {
+  position: relative;
+  min-width: 60px;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding-bottom: 15px;
+  text-align: center;
+}
+.timer__item::before {
+  content: attr(data-title);
+  display: block;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  font-size: 14px;
+}
+.timer__item:not(:last-child)::after {
+  content: ':';
+  position: absolute;
+  right: -15px;
+}
+
+.main-select-menu{
+  width: 300px;
+  cursor: pointer;
+  position: relative;
+}
+
+.main-select{
+  background-color: white;
+  padding: 20px;
+  color: #fff;
+  font-weight: 500;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.main-select__list{
+  position: absolute;
+  width: 100%;
+  background: #FFFFFF;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+  transition: .1s linear;
+  height: 0;
+}
+
+.main-select__list-item {
+  padding: 8px 0;
+  font-weight: 500;
+  font-size: 14px;
+  transition: .3s ease-in-out;
+}
+
+.main-select__list-item.selected{
+  position: relative;
+  &::after {
+    content:'';
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    background: url('/images/black-mark.svg') center no-repeat;
+  }
+}
+
+.main-select__list::-webkit-scrollbar{
+  width: 4px;
+  background-color: #eee;
+}
+
+.main-select__list::-webkit-scrollbar-thumb{
+  background-color: #00a8ff;
+}
+
+.main-select__list.active{
+  height: auto;
+}
+.main-select__arrow_open {
+  transform: rotate(180deg);
+}

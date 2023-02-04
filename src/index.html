@@ -1,26 +1,456 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
-    <title>Заголовок</title>
-</head>
-<body>
-<main>
-    <h1>Hello World</h1>
-    <div class="swiper">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide">Slide 1</div>
-            <div class="swiper-slide">Slide 2</div>
-            <div class="swiper-slide">Slide 3</div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
+    <title>Goldy Store - Ювелирный магазин</title>
+  </head>
+  <body>
+    <header>
+      <div class="header__container container">
+        <div class="header-info">
+          <div class="header-info-contacts header-contacts">
+            <div class="header-contacts__select-menu main-select-menu">
+              <div class="main-select">
+                <span class="main-select__choice">Выбранный город</span>
+                <img
+                  class="main-select__arrow"
+                  src="./images/select-arrow.svg"
+                  alt="Select arrow"
+                />
+              </div>
+              <div class="main-select__list">
+                <div class="main-select__list-item">Санкт-Петербург</div>
+                <div class="main-select__list-item">Москва</div>
+                <div class="main-select__list-item">Нижний Новгород</div>
+                <div class="main-select__list-item">Ростов-на-Дону</div>
+              </div>
+            </div>
+          </div>
+          <a class="header-tel" href="tel:88007852535">8 800 785-25-35</a>
+          <div class="header-main-title">
+            <p class="header-main-title-text">Goldy <span>Store</span></p>
+            <p class="header-main-title-descr">ювелирный магазин</p>
+          </div>
+          <ul class="header-login">
+            <li class="header-login__item">Вход</li>
+            <li class="header-login__item">Регистрация</li>
+          </ul>
+          <div class="header-icons">
+            <div class="header-icons__likes">
+              <img src="./images/head-likes.svg" alt="Header likes icon" />
+              <p class="header-icons__likes-count js-header-likes">0</p>
+            </div>
+            <button class="js-likes-item">Лайк1</button>
+            <button class="js-likes-item">Лайк2</button>
+            <button class="js-likes-item">Лайк3</button>
+            <button class="js-likes-item">Лайк4</button>
+            <button class="js-likes-item">Лайк5</button>
+            <img src="./images/head-chart.svg" alt="Header chart icon" />
+            <img src="./images/head-bag.svg" alt="Header bug icon" />
+          </div>
         </div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
-    </div>
-</main>
-</body>
+        <div class="header-menu">
+          <nav class="header-menu__nav header__nav">
+            <ul class="header__nav-list">
+              <li class="header__nav-list-item"><a href="#">Каталог</a></li>
+              <li class="header__nav-list-item"><a href="#">Акции</a></li>
+              <li class="header__nav-list-item"><a href="#">Бренды</a></li>
+              <li class="header__nav-list-item"><a href="#">Магазины</a></li>
+              <li class="header__nav-list-item"><a href="#">О нас</a></li>
+              <li class="header__nav-list-item">
+                <a href="#">Доставка и оплата</a>
+              </li>
+              <li class="header__nav-list-item"><a href="#">Статьи</a></li>
+            </ul>
+          </nav>
+          <div class="header-search">
+            <button class="header__search-button">
+              <img src="./images/header-search.svg" alt="Header search logo" />
+            </button>
+            <input
+              type="text"
+              class="header__search-input"
+              placeholder="Поиск по сайту"
+            />
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <h1 class="visually-hidden">Goldy Store ювелирный магазин</h1>
+      <section class="main-slider">
+        <div class="main-slider__container container">
+          <div class="swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div>
+                  <p>Cуперскидка до 60%</p>
+                  <p>На бриллианты</p>
+                  <button>Подробнее</button>
+                </div>
+                тут картинка
+              </div>
+              <div class="swiper-slide">
+                <div>
+                  <p>Cуперскидка до 60%</p>
+                  <p>На чето еще</p>
+                  <button>Подробнее</button>
+                </div>
+                тут картинка
+              </div>
+              <div class="swiper-slide">
+                <div>
+                  <p>Cуперскидка до 60%</p>
+                  <p>и еще че то</p>
+                  <button>Подробнее</button>
+                </div>
+                тут картинка
+              </div>
+            </div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+      </section>
+      <section class="categories">
+        <div class="categories__container container">
+          <h2 class="categories__title">Популярные категории</h2>
+          <ul class="categories__list">
+            <li class="categories__list-item">
+              <p class="categories__list-text">Кольца</p>
+            </li>
+            <li class="categories__list-item">
+              <p class="categories__list-text">Серьги</p>
+            </li>
+            <li class="categories__list-item">
+              <p class="categories__list-text">Помолвочные кольца</p>
+            </li>
+            <li class="categories__list-item">
+              <p class="categories__list-text">Браслеты</p>
+            </li>
+            <li class="categories__list-item">
+              <p class="categories__list-text">Колье и подвески</p>
+            </li>
+            <li class="categories__list-item">
+              <p class="categories__list-text">Часы</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="sale">
+        <div class="sale__container container">
+          <h2 class="sale__title">Распродажа</h2>
+        </div>
+      </section>
+      <section class="product">
+        <div class="product container">
+          <div class="product__head">
+            <h2 class="product__head-title">Товар дня</h2>
+          </div>
+          <div class="product__content">
+            <div class="product__content-info product-info">
+              <div class="product-info__rating">
+                <img
+                  src="./images/product-rating.svg"
+                  alt="Product rating image"
+                />
+                <p class="product-info__rating-number">4,2</p>
+              </div>
+              <p class="product-info__title">Кольцо из золота с бриллиантами</p>
+              <p class="product-info__article">Артикул:1012076</p>
+              <div class="product-info__price">
+                <p class="product-info__price-current">22 000 ₽</p>
+                <p class="product-info__price-old">
+                  22 000 ₽
+                  <span>-45%</span>
+                </p>
+                <div class="product-info__timer timer">
+                  <div class="timer__items">
+                    <div class="timer__item timer__hours">00</div>
+                    <div class="timer__item timer__minutes">00</div>
+                    <div class="timer__item timer__seconds">00</div>
+                  </div>
+                </div>
+              </div>
+              <div class="product-info__colors product-colors">
+                <p class="product-colors__title">Цвет</p>
+                <ul class="product-colors__list">
+                  <li class="product-color__list-item">
+                    <input
+                      class="product-color__list-radio"
+                      type="radio"
+                      name="product-color"
+                      value="#D9D9D9"
+                    />
+                  </li>
+                  <li class="product-color__list-item">
+                    <input
+                      class="product-color__list-radio"
+                      type="radio"
+                      name="product-color"
+                      value="#F1CB7E"
+                    />
+                  </li>
+                  <li class="product-color__list-item">
+                    <input
+                      class="product-color__list-radio"
+                      type="radio"
+                      name="product-color"
+                      value="#EA8C48"
+                    />
+                  </li>
+                  <li
+                    class="product-color__list-item product-color__list-item_disabled"
+                  >
+                    <input
+                      class="product-color__list-radio"
+                      type="radio"
+                      name="product-color"
+                      value="#A7E492"
+                    />
+                  </li>
+                </ul>
+              </div>
+              <div class="product-info__sizes product-sizes">
+                <div class="product-sizes__head">
+                  <p class="product-sizes__title">Размер</p>
+                  <span class="product-sizes__answer">?</span>
+                </div>
+                <ul class="product-sizes__list">
+                  <li class="product-sizes__list-item">
+                    <input
+                      class="product-sizes__list-radio"
+                      type="radio"
+                      name="product-size"
+                      value="16,5"
+                      id="product-size-16,5"
+                    />
+                    <label for="product-size-16,5">16,5</label>
+                  </li>
+                  <li class="product-sizes__list-item">
+                    <input
+                      class="product-sizes__list-radio"
+                      type="radio"
+                      name="product-size"
+                      value="17,5"
+                      id="product-size-17,5"
+                    />
+                    <label for="product-size-17,5">17,5</label>
+                  </li>
+                  <li class="product-sizes__list-item">
+                    <input
+                      class="product-sizes__list-radio"
+                      type="radio"
+                      name="product-size"
+                      value="18,5"
+                      id="product-size-18,5"
+                    />
+                    <label for="product-size-18,5">18,5</label>
+                  </li>
+                  <li class="product-sizes__list-item">
+                    <input
+                      class="product-sizes__list-radio"
+                      type="radio"
+                      name="product-size"
+                      value="19"
+                      id="product-size-19"
+                    />
+                    <label for="product-size-19">19</label>
+                  </li>
+                  <li class="product-sizes__list-item">
+                    <input
+                      class="product-sizes__list-radio"
+                      type="radio"
+                      name="product-size"
+                      value="19,5"
+                      id="product-size-19,5"
+                    />
+                    <label for="product-size-19,5">19,5</label>
+                  </li>
+                  <li class="product-sizes__list-item">
+                    <input
+                      class="product-sizes__list-radio"
+                      type="radio"
+                      name="product-size"
+                      value="19,5x2"
+                      id="product-size-19,5x2"
+                    />
+                    <label for="product-size-19,5x2">19,5</label>
+                  </li>
+                  <li class="product-sizes__list-item">
+                    <input
+                      class="product-sizes__list-radio"
+                      type="radio"
+                      name="product-size"
+                      value="18,5x2"
+                      id="product-size-18,5x2"
+                    />
+                    <label for="product-size-18,5x2">18,5</label>
+                  </li>
+                  <li class="product-sizes__list-item">
+                    <input
+                      class="product-sizes__list-radio"
+                      type="radio"
+                      name="product-size"
+                      value="19x2"
+                      id="product-size-19x2"
+                    />
+                    <label for="product-size-19x2">19</label>
+                  </li>
+                  <li class="product-sizes__list-item">
+                    <input
+                      class="product-sizes__list-radio"
+                      type="radio"
+                      name="product-size"
+                      value="19,5x3"
+                      id="product-size-19,5x3"
+                    />
+                    <label for="product-size-19,5x3">19,5</label>
+                  </li>
+                  <li class="product-sizes__list-item">
+                    <input
+                      class="product-sizes__list-radio"
+                      type="radio"
+                      name="product-size"
+                      value="19,5x4"
+                      id="product-size-19,5x4"
+                    />
+                    <label for="product-size-19,5x4">19,5</label>
+                  </li>
+                </ul>
+              </div>
+              <div class="product-info__footer product-footer">
+                <div class="product-footer__actions">
+                  <button class="product-footer__action-button">
+                    В корзину
+                  </button>
+                  <button class="product-footer__action-button">
+                    Купить в 1 клик
+                  </button>
+                </div>
+                <div class="product-footer__additional">
+                  <button class="product-footer__additional-button">
+                    Сохранить
+                  </button>
+                  <button class="product-footer__additional-button">
+                    Сравнить
+                  </button>
+                  <button class="product-footer__additional-button">
+                    Поделиться
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="articles">
+        <div class="articles__container container">
+          <div class="articles__head">
+            <h2 class="articles-head__title">Статьи</h2>
+            <a class="articles__link" href="#">Читать все</a>
+          </div>
+          <ul class="articles__list">
+            <li class="articles__list-item">
+              <time class="articles__list-date">21 сентября 2021</time>
+              <picture>
+                <source
+                  srcset="
+                    ./images/articles-img1.png    1x,
+                    ./images/articles-img1@2x.png 2x
+                  "
+                />
+                <img
+                  src="./images/articles-img1.png"
+                  srcset="
+                    ./images/articles-img1.png    1x,
+                    ./images/articles-img1@2x.png 2x
+                  "
+                  alt="Articles image #1"
+                />
+              </picture>
+              <h3 class="articles__list-text">
+                Обручальные кольца: тренды 2021
+              </h3>
+            </li>
+            <li class="articles__list-item">
+              <time class="articles__list-date">21 сентября 2021</time>
+              <picture>
+                <source
+                  srcset="
+                    ./images/articles-img2.png    1x,
+                    ./images/articles-img2@2x.png 2x
+                  "
+                />
+                <img
+                  src="./images/articles-img2.png"
+                  srcset="
+                    ./images/articles-img2.png    1x,
+                    ./images/articles-img2@2x.png 2x
+                  "
+                  alt="Articles image #2"
+                />
+              </picture>
+              <h3 class="articles__list-text">Главные ювелирные тренды года</h3>
+            </li>
+            <li class="articles__list-item">
+              <time class="articles__list-date">21 сентября 2021</time>
+              <picture>
+                <source
+                  srcset="
+                    ./images/articles-img3.png    1x,
+                    ./images/articles-img3@2x.png 2x
+                  "
+                />
+                <img
+                  src="./images/articles-img3.png"
+                  srcset="
+                    ./images/articles-img3.png    1x,
+                    ./images/articles-img3@2x.png 2x
+                  "
+                  alt="Articles image #3"
+                />
+              </picture>
+              <h3 class="articles__list-text">
+                Жемчуг: 7 малоизвестных фактов о культовом украшении
+              </h3>
+            </li>
+            <li class="articles__list-item">
+              <time class="articles__list-date">21 сентября 2021</time>
+              <picture>
+                <source
+                  srcset="
+                    ./images/articles-img4.png    1x,
+                    ./images/articles-img4@2x.png 2x
+                  "
+                />
+                <img
+                  src="./images/articles-img4.png"
+                  srcset="
+                    ./images/articles-img4.png    1x,
+                    ./images/articles-img4@2x.png 2x
+                  "
+                  alt="Articles image #4"
+                />
+              </picture>
+              <h3 class="articles__list-text">
+                Как отличить золото от подделки: 10 практических советов
+              </h3>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+  </body>
 </html>
