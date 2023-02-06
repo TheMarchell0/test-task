@@ -1,0 +1,63 @@
+.main {
+  &-slider {
+    margin-top: 19px;
+
+    &__buttons-navigation {
+      max-width: 900px;
+    }
+  }
+
+  &-content {
+    &__slide {
+      display: flex;
+      justify-content: space-between;
+      background: var(--main-gray);
+      position: relative;
+      overflow: hidden;
+      padding: 0 35px 0 126px;
+
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 22px;
+        left: -111px;
+        z-index: -1;
+        width: 833px;
+        height: 643px;
+        background: url("/images/main-slider-brilliant.svg") no-repeat center;
+      }
+
+      &-info {
+        margin-top: 177px;
+
+        &-title,
+        &-text {
+          font-family: "Prata";
+          font-weight: 400;
+          line-height: 1;
+        }
+
+        &-title {
+          font-size: 20px;
+          margin-bottom: 31px;
+        }
+
+        &-text {
+          font-size: 50px;
+          text-transform: uppercase;
+          margin-bottom: 53px;
+        }
+
+        &-button {
+          max-width: 200px;
+          padding: 20px 0;
+        }
+      }
+
+      &-img {
+        margin-top: 14px;
+      }
+    }
+  }
+}

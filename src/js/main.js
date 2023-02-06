@@ -4,3 +4,4 @@ import "../js/sliders";
 import "../js/timer";
 import "../js/select";
 import "../js/likes";
+import "../js/changeCardHeight";

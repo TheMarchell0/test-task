@@ -1,0 +1,224 @@
+.header {
+  &-info {
+    padding: 31px 0 13px;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+
+    &__contacts {
+      margin-right: 23px;
+    }
+  }
+
+  &__tel {
+    & a {
+      position: relative;
+      padding-left: 25px;
+
+      &::after {
+        content: "";
+        display: block;
+        width: 16px;
+        height: 16px;
+        background: url("/images/head-phone.svg") no-repeat center;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+        transition: 0.1s linear;
+      }
+    }
+
+    &:hover {
+      & a::after {
+        opacity: 0.5;
+      }
+    }
+  }
+
+  &__main-logo {
+    flex: 45.2% 0 0;
+    display: flex;
+    justify-content: center;
+    transform: translateY(-8px);
+  }
+
+  &-login {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    &__item {
+      position: relative;
+      cursor: pointer;
+      transition: 0.1s linear;
+
+      &:hover {
+        opacity: 0.5;
+      }
+
+      &:not(:last-child) {
+        padding-right: 13px;
+      }
+
+      &:not(:first-child) {
+        padding-left: 9px;
+      }
+
+      &:last-child {
+        &::after {
+          display: none;
+        }
+      }
+
+      &::after {
+        content: "";
+        display: block;
+        height: 10px;
+        width: 1px;
+        background-color: var(--main-black);
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 0;
+      }
+    }
+  }
+
+  &-icons {
+    display: flex;
+    align-items: center;
+
+    &__item {
+      margin-right: 25px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      &_bag {
+        padding: 2px 3px;
+        transition: 0.1s linear;
+        cursor: pointer;
+
+        &:hover {
+          background: #f8f8f8;
+        }
+
+        &:active {
+          background: #e8e7e7;
+        }
+      }
+    }
+    &__likes {
+      position: relative;
+      max-width: 33px;
+      width: 100%;
+
+      &-count {
+        width: 19px;
+        height: 19px;
+        font-weight: 700;
+        font-size: 10px;
+        line-height: 100%;
+        color: var(--main-white);
+        border-radius: 50%;
+        background-color: #e46942;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        right: -12px;
+        top: -7px;
+      }
+    }
+  }
+
+  &-menu {
+    background-color: var(--main-gray);
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__nav {
+    padding: 0 0 0 50px;
+    &-list {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 850px;
+      width: 100%;
+
+      &-item {
+        padding: 27px 0 23px;
+        font-weight: 500;
+        font-size: 13px;
+        line-height: 1;
+        text-transform: uppercase;
+        margin-right: 61px;
+        transition: 0.1s linear;
+
+        &:hover {
+          opacity: 0.5;
+        }
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+
+  &-search {
+    display: flex;
+    align-items: center;
+    border-left: 1px solid #f0f0f0;
+    padding: 0 57px 0 22px;
+
+    &__button {
+      margin-right: 14px;
+    }
+
+    &__input {
+      padding: 8px 0;
+      background: transparent;
+      border: none;
+      font-weight: 300;
+      font-size: 14px;
+      line-height: 1;
+      color: #a2a2a2;
+
+      &:focus-visible {
+        outline: none;
+      }
+
+      &::-webkit-input-placeholder,
+      &::-moz-placeholder,
+      &:-ms-input-placeholder,
+      &:-moz-placeholder,
+      &::placeholder,
+      & {
+        font-weight: inherit;
+        font-size: inherit;
+        line-height: inherit;
+        color: inherit;
+      }
+
+      &::-ms-clear,
+      &::-ms-reveal {
+        display: none;
+        width: 0;
+        height: 0;
+      }
+
+      &::-webkit-search-decoration,
+      &::-webkit-search-cancel-button,
+      &::-webkit-search-results-button,
+      &::-webkit-search-results-decoration {
+        display: none;
+      }
+    }
+  }
+}

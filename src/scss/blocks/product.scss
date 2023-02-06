@@ -1,0 +1,335 @@
+.product {
+  &-view {
+    max-width: 550px;
+    width: 100%;
+    position: relative;
+
+    &__tags {
+      display: flex;
+      align-items: center;
+
+      &-item {
+        color: var(--main-white);
+        font-weight: 500;
+        font-size: 13px;
+        border-radius: 15px;
+        background: var(--main-black);
+        padding: 4px 11px;
+        margin-right: 7px;
+
+        &:last-child {
+          margin-right: 0;
+        }
+
+        &:nth-child(1) {
+          background: #495159;
+        }
+
+        &:nth-child(2) {
+          background: var(--gold);
+        }
+
+        &:nth-child(3) {
+          background: #5b8a8f;
+        }
+      }
+    }
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+  }
+
+  &-info {
+    line-height: 1;
+
+    &__rating {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      &-number {
+        font-weight: 300;
+        font-size: 14px;
+      }
+    }
+
+    &__title {
+      font-family: "Prata";
+      font-weight: 400;
+      font-size: 32px;
+    }
+
+    &__article {
+      font-weight: 300;
+      font-size: 14px;
+      color: #8f8f8f;
+    }
+
+    &__price {
+      &-current {
+        font-weight: 600;
+        font-size: 20px;
+      }
+
+      &-old {
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 1;
+        color: #8f8f8f;
+        position: relative;
+        padding-right: 10px;
+        max-width: 136px;
+        width: 100%;
+      }
+    }
+  }
+
+  &-colors {
+    border-top: 1px solid #f0f0f0;
+
+    &__list {
+      &-radio {
+        width: 32px;
+        height: 32px;
+        appearance: none;
+        border-radius: 50%;
+        cursor: pointer;
+
+        &_disabled {
+          opacity: 0.3;
+          pointer-events: none;
+        }
+
+        &::after {
+          content: "";
+          border: 1px solid #dadada;
+          display: inline-block;
+          background: #d9d9d9;
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+          transition: 0.1s linear;
+          box-shadow: inset 0px 0px 0px 3px var(--main-white);
+        }
+
+        &:checked {
+          &::after {
+            border: 1px solid var(--main-black);
+          }
+        }
+
+        &:nth-child(2) {
+          &::after {
+            background: #f1cb7e;
+          }
+        }
+
+        &:nth-child(3) {
+          &::after {
+            background: #ea8c48;
+          }
+        }
+
+        &:nth-child(4) {
+          &::after {
+            background: #a7e492;
+          }
+        }
+      }
+    }
+  }
+
+  &-sizes {
+    &__answer {
+      position: relative;
+
+      &-title {
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 1;
+        width: 18px;
+        height: 18px;
+        background: #f0f0f0;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: 0.2s linear;
+
+        &:hover {
+          background: #d3d3d3;
+
+          & + .product-sizes__answer-descr {
+            opacity: 1;
+            pointer-events: initial;
+          }
+        }
+      }
+
+      &-descr {
+        opacity: 0;
+        pointer-events: none;
+        background: var(--main-white);
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 1.4;
+        padding: 25px 50px 25px 24px;
+        box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+        position: absolute;
+        top: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        max-width: 271px;
+        width: 100%;
+        transition: 0.1s linear;
+
+        &::after {
+          content: "";
+          display: block;
+          width: 8px;
+          height: 8px;
+          background: var(--main-white);
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%) rotate(-45deg);
+          bottom: -4px;
+        }
+      }
+    }
+
+    &__list {
+      display: flex;
+      align-items: center;
+
+      &-item {
+        max-width: 50px;
+        width: 100%;
+      }
+      &-radio {
+        appearance: none;
+        opacity: 0;
+
+        &:checked + .product-sizes__list-label {
+          border: 1px solid var(--main-black);
+          background: var(--main-black);
+          color: var(--main-white);
+        }
+      }
+
+      &-label {
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 1;
+        text-align: center;
+        border: 1px solid #dadada;
+        transition: 0.1s linear;
+        cursor: pointer;
+        display: block;
+
+        padding: 7px 0px;
+
+        &:hover {
+          border: 1px solid var(--main-black);
+        }
+
+        &_disabled {
+          opacity: 0.3;
+          pointer-events: none;
+        }
+      }
+    }
+  }
+
+  &-footer {
+    display: flex;
+
+    &__actions {
+      &-button {
+        padding: 20px 0;
+        max-width: 400px;
+        transition: 0.1s linear;
+
+        &:hover {
+          background: #505050;
+        }
+
+        &:active {
+          background: #000000;
+        }
+
+        &_white {
+          padding: 19px 0;
+
+          &:hover {
+            background: var(--main-black);
+            color: var(--main-white);
+          }
+
+          &:active {
+            background: #000000;
+            color: var(--main-white);
+          }
+        }
+      }
+    }
+
+    &__additional {
+      display: flex;
+      flex-direction: column;
+
+      &-button {
+        display: flex;
+        align-items: center;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 1;
+        transition: 0.1s linear;
+        cursor: pointer;
+
+        & label {
+          cursor: inherit;
+        }
+
+        & img {
+          transition: inherit;
+          filter: grayscale(1) opacity(0.4);
+        }
+
+        &:hover {
+          & img {
+            filter: grayscale(1) opacity(0.8);
+          }
+          & span {
+            color: #979797;
+          }
+        }
+      }
+    }
+    &__like {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  &-slider-button {
+    border: none;
+    width: 10px;
+    height: 16px;
+    &::after {
+      background: url("/images/alternate-arrow.svg") no-repeat center;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.product-colors__title,
+.product-sizes__title {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1;
+  text-transform: uppercase;
+}

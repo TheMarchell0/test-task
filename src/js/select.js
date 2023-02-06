@@ -1,6 +1,9 @@
 const selectMenu = document.querySelectorAll(".main-select-menu");
 
 for (let selectMenuItem of selectMenu) {
+  const isCitySelect = selectMenuItem.classList.contains(
+    "main-select-menu_location"
+  );
   const select = selectMenuItem.querySelector(".main-select");
   const optionsList = selectMenuItem.querySelector(".main-select__list");
   const options = optionsList.querySelectorAll(".main-select__list-item");
@@ -9,14 +12,16 @@ for (let selectMenuItem of selectMenu) {
   const selectedCity = readCookie("selected_city");
 
   choice.innerHTML =
-    selectedCity == undefined ? options[0].innerHTML : selectedCity;
+    selectedCity == undefined || !isCitySelect
+      ? options[0].innerHTML
+      : selectedCity;
   select.addEventListener("click", (e) => {
-    optionsList.classList.toggle("active");
+    selectMenuItem.classList.toggle("active");
     arrow.classList.toggle("main-select__arrow_open");
   });
 
   options.forEach((option) => {
-    if (option.innerHTML === selectedCity) {
+    if (option.innerHTML === selectedCity && isCitySelect) {
       option.classList.add("selected");
     }
     option.addEventListener("click", () => {
@@ -25,9 +30,11 @@ for (let selectMenuItem of selectMenu) {
       });
       choice.innerHTML = option.innerHTML;
       option.classList.add("selected");
-      optionsList.classList.remove("active");
+      selectMenuItem.classList.remove("active");
       arrow.classList.toggle("main-select__arrow_open");
-      writeCookie("selected_city", option.innerHTML, 30);
+      if (isCitySelect) {
+        writeCookie("selected_city", option.innerHTML, 30);
+      }
     });
   });
 }
