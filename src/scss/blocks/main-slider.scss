@@ -3,7 +3,11 @@
     margin-top: 19px;
 
     &__buttons-navigation {
-      max-width: 900px;
+      max-width: 1251px;
+    }
+
+    &-pagination {
+      bottom: 28px !important;
     }
   }
 

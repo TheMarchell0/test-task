@@ -6,8 +6,20 @@ const salesSliders = document.querySelectorAll(".js-sale-slider");
 const salesItemSliders = document.querySelectorAll(".js-sale-slider-item");
 const productSliders = document.querySelectorAll(".js-product-slider-item");
 let salesSlidersCount = 1;
-let saleSlidersItemsCount = 1;
 let productSlidersCount = 1;
+let salesPaginationSettings = [];
+
+for (let i = 1; i <= 4; i++) {
+  for (let j = 1; j <= 8; j++) {
+    salesPaginationSettings.push({
+      loop: true,
+      pagination: {
+        el: `.sale__slider-item-pagination_${i}-${j}`,
+        clickable: true,
+      },
+    });
+  }
+}
 
 const mainSlider = new Swiper("#main-slider", {
   loop: true,
@@ -37,16 +49,11 @@ for (let item of salesSliders) {
   salesSlidersCount++;
 }
 
-for (let item of salesItemSliders) {
-  const salesSliderItem = new Swiper(item, {
-    loop: true,
-
-    pagination: {
-      el: `.sale__slider-item-pagination_${saleSlidersItemsCount}`,
-      clickable: true,
-    },
-  });
-  saleSlidersItemsCount++;
+for (let i = 0; i <= salesItemSliders.length; i++) {
+  const salesSliderItem = new Swiper(
+    salesItemSliders[i],
+    salesPaginationSettings[i]
+  );
 }
 
 for (let productSlider of productSliders) {

@@ -8,7 +8,7 @@
   }
 
   &__slider {
-    margin-top: 49px;
+    padding-top: 49px;
   }
 
   &-view {
@@ -71,6 +71,8 @@
       align-items: center;
       justify-content: space-between;
       margin-bottom: 24px;
+      max-width: 140px;
+      width: 100%;
 
       &-number {
         font-weight: 300;
@@ -321,15 +323,6 @@
       &-button {
         padding: 21px 0;
         max-width: 400px;
-        transition: 0.1s linear;
-
-        &:hover {
-          background: #505050;
-        }
-
-        &:active {
-          background: #000000;
-        }
 
         &:not(:last-child) {
           margin-bottom: 11px;
@@ -337,16 +330,6 @@
 
         &_white {
           padding: 20px 0;
-
-          &:hover {
-            background: var(--main-black);
-            color: var(--main-white);
-          }
-
-          &:active {
-            background: #000000;
-            color: var(--main-white);
-          }
         }
       }
     }
@@ -403,10 +386,20 @@
     border: none;
     width: 10px;
     height: 16px;
+    top: 52%;
+
     &::after {
       background: url("/images/alternate-arrow.svg") no-repeat center;
       width: 100%;
       height: 100%;
+    }
+
+    &.swiper-button-next {
+      right: 15px;
+    }
+
+    &.swiper-button-prev {
+      left: 15px;
     }
   }
 }

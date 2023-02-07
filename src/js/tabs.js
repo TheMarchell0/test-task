@@ -6,11 +6,16 @@ for (let tab of tabs) {
   const navigation = document.querySelector(`.js-sale-nav-${tab.dataset.show}`);
 
   tab.addEventListener("click", () => {
+    if (!tab.classList.contains("active")) {
+      for (let subTab of tabs) {
+        subTab.classList.remove("active");
+      }
+      tab.classList.add("active");
+    }
     for (let saleContent of saleContents) {
       const activeSlider = saleContent.classList.contains(
         `js-sale-slider-${tab.dataset.show}`
       );
-
       if (!saleContent.classList.contains("visually-hidden")) {
         saleContent.classList.add("visually-hidden");
         for (let navigationItem of navigations) {
@@ -24,7 +29,6 @@ for (let tab of tabs) {
           }
         }
       }
-
       if (activeSlider) {
         saleContent.classList.remove("visually-hidden");
         navigation.classList.remove("visually-hidden");

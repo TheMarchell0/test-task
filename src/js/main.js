@@ -5,4 +5,4 @@ import "../js/timer";
 import "../js/select";
 import "../js/likes";
 import "../js/tabs";
-import "../js/changeCardHeight";
+import "./saleCard";

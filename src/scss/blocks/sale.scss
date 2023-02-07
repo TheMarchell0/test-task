@@ -44,7 +44,14 @@
   }
 
   &__list {
-    padding-bottom: 12px;
+    padding-bottom: 166px;
+    overflow-x: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
 
     &-item {
       max-width: 310px;
@@ -160,6 +167,7 @@
   &__decor {
     display: flex;
     align-items: center;
+    margin-top: -155px;
 
     &-item {
       max-width: 420px;
@@ -195,4 +203,8 @@
   &__select-menu-list {
     margin-top: 26px;
   }
+}
+
+.sale__list-item .swiper-pagination {
+  bottom: 4px !important;
 }
