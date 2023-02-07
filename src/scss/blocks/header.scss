@@ -8,7 +8,7 @@
     align-items: center;
 
     &__contacts {
-      margin-right: 23px;
+      flex: 16.8% 0 0;
     }
   }
 
@@ -49,6 +49,8 @@
     display: flex;
     align-items: center;
     flex-wrap: wrap;
+    flex: auto;
+    justify-content: center;
 
     &__item {
       position: relative;
@@ -90,6 +92,8 @@
   &-icons {
     display: flex;
     align-items: center;
+    flex: auto;
+    justify-content: flex-end;
 
     &__item {
       margin-right: 25px;
@@ -116,6 +120,7 @@
       position: relative;
       max-width: 33px;
       width: 100%;
+      margin-right: 16px;
 
       &-count {
         width: 19px;
@@ -130,8 +135,8 @@
         align-items: center;
         justify-content: center;
         position: absolute;
-        right: -12px;
-        top: -7px;
+        right: 0;
+        top: -8px;
       }
     }
   }
