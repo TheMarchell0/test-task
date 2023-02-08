@@ -10,6 +10,12 @@ for (let selectMenuItem of selectMenu) {
   const arrow = select.querySelector(".main-select__arrow");
   const choice = select.querySelector(".main-select__choice");
   const selectedCity = readCookie("selected_city");
+  const isSaleSelect = selectMenuItem.classList.contains(
+    "sale__select-menu-list-item"
+  );
+  const wrapper = isSaleSelect
+    ? selectMenuItem.closest(".sale__list-item-wrapper")
+    : undefined;
 
   choice.innerHTML =
     selectedCity == undefined || !isCitySelect
@@ -18,6 +24,9 @@ for (let selectMenuItem of selectMenu) {
   select.addEventListener("click", (e) => {
     selectMenuItem.classList.toggle("active");
     arrow.classList.toggle("main-select__arrow_open");
+    if (isSaleSelect) {
+      wrapper.classList.add("sale__list-item-wrapper_open");
+    }
   });
 
   options.forEach((option) => {
@@ -32,6 +41,11 @@ for (let selectMenuItem of selectMenu) {
       option.classList.add("selected");
       selectMenuItem.classList.remove("active");
       arrow.classList.toggle("main-select__arrow_open");
+      setTimeout(() => {
+        if (!wrapper.matches(":hover")) {
+          wrapper.classList.remove("sale__list-item-wrapper_open");
+        }
+      }, 100);
       if (isCitySelect) {
         writeCookie("selected_city", option.innerHTML, 30);
       }

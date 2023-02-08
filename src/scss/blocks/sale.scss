@@ -53,6 +53,12 @@
       display: none;
     }
 
+    &.js-sale-slider-4 {
+      & .sale__slider-item-slide img {
+        transform: rotate(45deg);
+      }
+    }
+
     &-item {
       max-width: 310px;
       width: 100%;
@@ -66,6 +72,10 @@
         height: 370px;
         padding: 38px 23px 24px;
         overflow: hidden;
+
+        &_open {
+          overflow: initial;
+        }
       }
 
       &:hover {
@@ -160,7 +170,7 @@
     & img {
       max-width: 200px;
       height: 200px;
-      object-fit: cover;
+      object-fit: contain;
     }
   }
 
