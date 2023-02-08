@@ -6,3 +6,4 @@ import "../js/select";
 import "../js/likes";
 import "../js/tabs";
 import "./saleCard";
+import "./burger";

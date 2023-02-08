@@ -22,9 +22,23 @@
   </head>
   <body>
     <header>
-      <div class="header__container container">
+      <div class="header-burger">
+        <div class="header-burger__container container">
+          <div class="header-burger__wrapper">
+            <img src="./images/header-logo-mobile.svg" alt="Header logo" />
+            <button id="header-burger" class="header-burger__button">
+              <img
+                src="./images/header-burger-button.svg"
+                alt="Header burger"
+              />
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="js-header header__container container">
+        <span id="header-burger-close" class="header__close-button">X</span>
         <div class="header-info">
-          <div class="header-info__contacts header-contacts">
+          <div class="header-info__item header-info__contacts header-contacts">
             <div
               class="header-contacts__select-menu main-select-menu main-select-menu_location"
             >
@@ -44,17 +58,17 @@
               </ul>
             </div>
           </div>
-          <div class="header__tel">
+          <div class="header-info__item header__tel">
             <a href="tel:88007852535">8 800 785-25-35</a>
           </div>
-          <div class="header__main-logo">
+          <div class="header-info__item header__main-logo">
             <img src="./images/header-logo.svg" alt="Header logo" />
           </div>
-          <ul class="header-login">
+          <ul class="header-info__item header-login">
             <li class="header-login__item">Вход</li>
             <li class="header-login__item">Регистрация</li>
           </ul>
-          <div class="header-icons">
+          <div class="header-info__item header-icons">
             <div class="header-icons__item header-icons__likes">
               <img src="./images/head-likes.svg" alt="Header likes icon" />
               <p class="header-icons__likes-count js-header-likes">0</p>
@@ -86,14 +100,19 @@
             </ul>
           </nav>
           <div class="header-search">
-            <button class="header-search__button">
-              <img src="./images/header-search.svg" alt="Header search logo" />
-            </button>
-            <input
-              type="search"
-              class="header-search__input"
-              placeholder="Поиск по сайту"
-            />
+            <div class="header-search__wrapper">
+              <button class="header-search__button">
+                <img
+                  src="./images/header-search.svg"
+                  alt="Header search logo"
+                />
+              </button>
+              <input
+                type="search"
+                class="header-search__input"
+                placeholder="Поиск по сайту"
+              />
+            </div>
           </div>
         </div>
       </div>

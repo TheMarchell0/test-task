@@ -4,6 +4,7 @@
   &__tabs {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
 
     &-item {
       background: #f0f0f0;
@@ -15,6 +16,7 @@
       cursor: pointer;
       font-weight: 300;
       transition: 0.1s linear;
+      margin-top: 9px;
 
       &:hover {
         background: #dddddd;
@@ -36,7 +38,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin: 15px 0 29px;
+      margin: 14px 0 29px;
       &-navigation {
         transform: translateY(-6px);
       }
@@ -64,6 +66,10 @@
       width: 100%;
       transition: 0.3s linear;
       height: 480px;
+
+      @media (max-width: $desktop-low) {
+        max-width: initial;
+      }
 
       &-wrapper {
         border: 1px solid #f0f0f0;
@@ -128,6 +134,10 @@
       &::before {
         top: -6px;
         right: -115px;
+
+        @media (max-width: $desktop-low) {
+          right: -60px;
+        }
       }
     }
   }
@@ -175,17 +185,37 @@
   }
 
   &__decor {
-    display: flex;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    grid-gap: 20px;
     margin-top: -155px;
+
+    @media (max-width: $desktop-low) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+    }
+
+    @media (max-width: $laptop) {
+      grid-template-columns: repeat(1, 1fr);
+    }
 
     &-item {
       max-width: 420px;
       width: 100%;
-      margin-right: 20px;
 
-      &:last-child {
-        margin-right: 0;
+      @media (max-width: $tablet) {
+        max-width: 310px;
+      }
+
+      & picture {
+        width: 100%;
+        display: block;
+
+        & img {
+          width: 100%;
+          object-fit: cover;
+        }
       }
     }
   }
@@ -202,6 +232,11 @@
 
       &:nth-child(2) {
         z-index: 9;
+      }
+
+      @media (max-width: $desktop-low) {
+        max-width: 300px;
+        width: 100%;
       }
     }
   }

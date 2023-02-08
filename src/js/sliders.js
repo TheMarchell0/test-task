@@ -22,7 +22,7 @@ for (let i = 1; i <= 4; i++) {
 }
 
 const mainSlider = new Swiper("#main-slider", {
-  loop: true,
+  loop: false,
   navigation: {
     nextEl: ".main-slider-button-next",
     prevEl: ".main-slider-button-prev",
@@ -31,19 +31,42 @@ const mainSlider = new Swiper("#main-slider", {
     el: ".main-slider-pagination",
     clickable: true,
   },
+  breakpoints: {
+    1025: {
+      allowTouchMove: false,
+    },
+  },
 });
 
 for (let item of salesSliders) {
   const salesSlider = new Swiper(item, {
     loop: false,
     slidesPerView: 4,
-    spaceBetween: 20,
     slidesPerGroup: 4,
+    spaceBetween: 20,
     allowTouchMove: false,
 
     navigation: {
       nextEl: ` .js-sale-nav-${salesSlidersCount} .sale-slider-button-next`,
       prevEl: ` .js-sale-nav-${salesSlidersCount} .sale-slider-button-prev`,
+    },
+
+    breakpoints: {
+      320: {
+        slidesPerView: 1,
+      },
+      767: {
+        allowTouchMove: true,
+        slidesPerView: 2,
+      },
+      1024: {
+        slidesPerView: 3,
+      },
+      1300: {
+        slidesPerView: 4,
+        slidesPerGroup: 4,
+        spaceBetween: 20,
+      },
     },
   });
   salesSlidersCount++;

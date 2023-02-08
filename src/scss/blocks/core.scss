@@ -11,12 +11,25 @@
   overflow: hidden !important;
 }
 
+$desktop-low: 1300px;
+$laptop: 1024px;
+$tablet: 767px;
+$phone-low: 360px;
+
+body {
+  overflow-x: hidden;
+}
+
 .container {
   max-width: 1330px;
   padding: 0 15px;
   width: 100%;
   margin: 0 auto;
   position: relative;
+
+  @media (max-width: $desktop-low) {
+    max-width: 1065px;
+  }
 }
 
 h2 {
@@ -25,15 +38,26 @@ h2 {
   font-size: 40px;
   line-height: 1;
   color: #303030;
+
+  @media (max-width: $phone-low) {
+    font-size: 32px;
+  }
 }
 
 .timer {
-  background: #f5f5f5;
-  padding: 12px;
+  @media (max-width: $tablet) {
+    flex-basis: 100%;
+  }
 
   &__items {
     display: flex;
     font-size: 48px;
+    background: #f5f5f5;
+    padding: 12px;
+
+    @media (max-width: $tablet) {
+      max-width: 223px;
+    }
   }
 
   &__item {
@@ -128,6 +152,19 @@ h2 {
 
     &_location {
       max-width: 196px;
+      background: white;
+
+      & .main-select__list-item {
+        @media (max-width: $laptop) {
+          padding: 10px 22px 10px 14px;
+        }
+      }
+
+      & .main-select__list-item.selected {
+        @media (max-width: $laptop) {
+          right: 9px;
+        }
+      }
 
       & .main-select {
         background: var(--main-white);
@@ -369,5 +406,13 @@ h2 {
     &:hover {
       filter: none;
     }
+  }
+}
+
+.swiper-button-prev,
+.swiper-button-next,
+.core-buttons-navigation {
+  @media (max-width: $laptop) {
+    display: none;
   }
 }

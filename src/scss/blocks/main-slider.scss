@@ -4,6 +4,10 @@
 
     &__buttons-navigation {
       max-width: 1251px;
+
+      @media (max-width: $desktop-low) {
+        max-width: 93%;
+      }
     }
 
     &-pagination {
@@ -20,6 +24,18 @@
       overflow: hidden;
       padding: 0 35px 0 126px;
 
+      @media (max-width: $desktop-low) {
+        padding: 0 35px 0 100px;
+      }
+
+      @media (max-width: $laptop) {
+        padding: 0 35px;
+      }
+
+      @media (max-width: $tablet) {
+        flex-direction: column;
+      }
+
       &::after {
         content: "";
         display: block;
@@ -34,6 +50,10 @@
 
       &-info {
         margin-top: 177px;
+
+        @media (max-width: $tablet) {
+          margin-top: 40px;
+        }
 
         &-title,
         &-text {
@@ -51,6 +71,14 @@
           font-size: 50px;
           text-transform: uppercase;
           margin-bottom: 53px;
+
+          @media (max-width: $desktop-low) {
+            font-size: 35px;
+          }
+
+          @media (max-width: $laptop) {
+            font-size: 27px;
+          }
         }
 
         &-button {
@@ -61,6 +89,31 @@
 
       &-img {
         margin-top: 14px;
+
+        @media (max-width: $desktop-low) {
+          min-height: 552px;
+          display: flex;
+          justify-content: center;
+        }
+
+        & img {
+          max-width: 400px;
+          object-fit: contain;
+
+          @media (max-width: $desktop-low) {
+            max-width: 400px;
+            object-fit: contain;
+          }
+
+          @media (max-width: $desktop-low) {
+            max-width: 320px;
+          }
+        }
+
+        @media (max-width: $tablet) {
+          min-height: 429px;
+          align-items: center;
+        }
       }
     }
   }
