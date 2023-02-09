@@ -4,18 +4,31 @@
 
     &__buttons-navigation {
       max-width: 1251px;
+      display: flex;
 
       @media (max-width: $desktop-low) {
         max-width: 93%;
       }
+
+      @media (max-width: $tablet) {
+        max-width: calc(100% - 63px);
+      }
+    }
+
+    &-button-prev,
+    &-button-next {
+      display: flex;
     }
 
     &-pagination {
-      bottom: 28px !important;
+      bottom: 25px !important;
     }
   }
 
   &-content {
+    &-wrapper {
+      will-change: transform;
+    }
     &__slide {
       display: flex;
       justify-content: space-between;
@@ -29,11 +42,12 @@
       }
 
       @media (max-width: $laptop) {
-        padding: 0 35px;
+        padding: 0 35px 0 90px;
       }
 
       @media (max-width: $tablet) {
         flex-direction: column;
+        padding: 0 35px;
       }
 
       &::after {
@@ -89,6 +103,8 @@
 
       &-img {
         margin-top: 14px;
+        min-height: 429px;
+        align-items: center;
 
         @media (max-width: $desktop-low) {
           min-height: 552px;
@@ -97,15 +113,12 @@
         }
 
         & img {
-          max-width: 400px;
-          object-fit: contain;
-
           @media (max-width: $desktop-low) {
             max-width: 400px;
             object-fit: contain;
           }
 
-          @media (max-width: $desktop-low) {
+          @media (max-width: $laptop) {
             max-width: 320px;
           }
         }

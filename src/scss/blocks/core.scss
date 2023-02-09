@@ -147,12 +147,12 @@ h2 {
 
       & .main-select__list {
         height: auto;
+        box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
       }
     }
 
     &_location {
       max-width: 196px;
-      background: white;
 
       & .main-select__list-item {
         @media (max-width: $laptop) {
@@ -160,14 +160,14 @@ h2 {
         }
       }
 
-      & .main-select__list-item.selected {
+      & .main-select__list-item.selected::after {
         @media (max-width: $laptop) {
           right: 9px;
         }
       }
 
       & .main-select {
-        background: var(--main-white);
+        background: transparent;
         padding: 15px 18px 13px;
 
         &__choice {
@@ -200,7 +200,6 @@ h2 {
     position: absolute;
     width: 100%;
     background: var(--main-white);
-    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
     overflow-y: auto;
     transition: 0.1s linear;
     height: 0;

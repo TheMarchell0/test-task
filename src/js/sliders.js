@@ -22,19 +22,19 @@ for (let i = 1; i <= 4; i++) {
 }
 
 const mainSlider = new Swiper("#main-slider", {
-  loop: false,
-  navigation: {
-    nextEl: ".main-slider-button-next",
-    prevEl: ".main-slider-button-prev",
-  },
+  slidesPerView: 1,
+  spaceBetween: 30,
+  centeredSlides: true,
+  simulateTouch: true,
+  loop: true,
+  allowTouchMove: false,
   pagination: {
     el: ".main-slider-pagination",
     clickable: true,
   },
-  breakpoints: {
-    1025: {
-      allowTouchMove: false,
-    },
+  navigation: {
+    nextEl: ".main-slider-button-next",
+    prevEl: ".main-slider-button-prev",
   },
 });
 
@@ -81,6 +81,7 @@ for (let i = 0; i <= salesItemSliders.length; i++) {
 
 for (let productSlider of productSliders) {
   const productSliderItem = new Swiper(productSlider, {
+    allowTouchMove: false,
     navigation: {
       nextEl: `.product-slider-button-next_${productSlidersCount}`,
       prevEl: `.product-slider-button-prev_${productSlidersCount}`,
@@ -90,7 +91,6 @@ for (let productSlider of productSliders) {
 }
 
 const productSlider = new Swiper("#product-slider", {
-  loop: true,
   allowTouchMove: false,
 
   navigation: {

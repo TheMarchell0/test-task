@@ -17,6 +17,11 @@ for (let selectMenuItem of selectMenu) {
     ? selectMenuItem.closest(".sale__list-item-wrapper")
     : undefined;
 
+  if (selectedCity == undefined || !isCitySelect) {
+    choice.innerHTML = options[0].innerHTML;
+    options[0].classList.add("selected");
+  } else choice.innerHTML = selectedCity;
+
   choice.innerHTML =
     selectedCity == undefined || !isCitySelect
       ? options[0].innerHTML

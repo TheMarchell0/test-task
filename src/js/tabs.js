@@ -16,8 +16,8 @@ for (let tab of tabs) {
       const activeSlider = saleContent.classList.contains(
         `js-sale-slider-${tab.dataset.show}`
       );
-      if (!saleContent.classList.contains("visually-hidden")) {
-        saleContent.classList.add("visually-hidden");
+      if (!saleContent.classList.contains("sale__list_hidden")) {
+        saleContent.classList.add("sale__list_hidden");
         for (let navigationItem of navigations) {
           if (
             !navigationItem.classList.contains("visually-hidden") &&
@@ -30,7 +30,7 @@ for (let tab of tabs) {
         }
       }
       if (activeSlider) {
-        saleContent.classList.remove("visually-hidden");
+        saleContent.classList.remove("sale__list_hidden");
         navigation.classList.remove("visually-hidden");
       }
     }
